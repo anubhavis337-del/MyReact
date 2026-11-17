@@ -1,10 +1,18 @@
-function Hero() {
+function Hero(props) {
+  console.log(props)
   return (
-    <div>
-      <h1>Ironman</h1>
+    <div
+      style={{
+        backgroundColor: "#DCE5DC",
+        width: "600px",
+        padding: "20px",
+        margin: "20px",
+      }}
+    >
+      <h1>My name is {props.heroName}</h1>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcoR4JU_Q57YQOcBaAWEa0pV9Irtn6yA3BJlBtG0S_kg&s=10"
-        
+        src={props.heroImage}
+        style={{ width: "400px", borderRadius: "5px" }}
       ></img>
     </div>
   );
