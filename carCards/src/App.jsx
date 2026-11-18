@@ -1,10 +1,10 @@
-import { useState } from "react";
+
 import "./App.css";
 import Car from "./components/Car";
 
 function App() {
   return (
-    <div style={{display:"flex"}}>
+    <div className="box">
       <Car 
       CarName="Thar"
       Image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAL5qnSxww9Os_yZrvDhAT13K7oUe3ioOMqUOpAS3w1g&s=10" />

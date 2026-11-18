@@ -1,9 +1,8 @@
 function Car(props){
 return(
-    <div>
-      <h1>It is OG {props.CarName}</h1>
-      <img src={props.Image}
-      style={{width:"600px", borderRadius:"50px",border:"5px solid black"}}
+    <div className="car-card">
+      <h1 className="heading">It is OG {props.CarName}</h1>
+      <img className="image" src={props.Image}
       ></img>
     </div>
 )
