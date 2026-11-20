@@ -1,11 +1,11 @@
   import React from "react";
 import "./App.css";
 import Counter from "./Components/counter.jsx";
-
+import Card from "./Components/card.jsx";
 function App() {
   return (
     <div>
-    //   {
+      {
     //   [
     //     React.createElement("div", null, [
     //     React.createElement("h2", null, "lorem ipsum dolor sit amet"),
@@ -27,8 +27,8 @@ function App() {
     
     //   ]
     }
-    <Counter/>
-    
+    {/* <Counter/> */}
+    <Card/>
     </div>
   );
 
