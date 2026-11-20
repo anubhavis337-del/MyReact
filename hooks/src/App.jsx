@@ -1,7 +1,7 @@
-  import React from "react";
-import "./App.css";
+import React from "react";
 import Counter from "./Components/counter.jsx";
 import Card from "./Components/card.jsx";
+import Todo from "./Components/Todo.jsx";
 function App() {
   return (
     <div>
@@ -28,7 +28,8 @@ function App() {
     //   ]
     }
     {/* <Counter/> */}
-    <Card/>
+    {/* <Card/> */}
+    <Todo/>
     </div>
   );
 
