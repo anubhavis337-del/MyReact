@@ -2,6 +2,8 @@ import React from "react";
 import Counter from "./Components/counter.jsx";
 import Card from "./Components/card.jsx";
 import Todo from "./Components/Todo.jsx";
+import Effects from "./Components/Effects.jsx";
+import WeatherAPI from "./Components/weatherAPI.jsx";
 function App() {
   return (
     <div>
@@ -29,7 +31,9 @@ function App() {
     }
     {/* <Counter/> */}
     {/* <Card/> */}
-    <Todo/>
+    {/* <Todo/> */}
+    {/* <Effects/> */}
+    <WeatherAPI />
     </div>
   );
 
