@@ -16,7 +16,7 @@ const WeatherAPI = () => {
     if (city.trim() !== "") {
       fetchWeatherData(city);
     }
-    }, [city]);
+    }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
