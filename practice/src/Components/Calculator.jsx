@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
@@ -6,6 +6,36 @@ const Calculator = () => {
   const [firstNum, setFirstnum] = useState(null);
   const [output, setOutput] = useState("");
   const [secondNum, setSecondnum] = useState("");
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+
+  //-----------api-------------------
+
+  async function fetchQuote(quote) {
+    let apiKey = import.meta.env.VITE_API_KEY;
+    // console.log(Boolean(apiKey));
+    let apiUrl = `https://api.api-ninjas.com/v2/randomquotes`;
+    const response = await fetch(apiUrl, {
+      // method: "GET",
+      headers: {
+        "X-Api-Key": apiKey,
+      },
+    });
+    const data = await response.json();
+    setQuote(data[0].quote);
+    setAuthor(data[0].author);
+  }
+
+  useEffect(() => {
+    fetchQuote();
+
+    const interval = setInterval(() => {
+      fetchQuote();
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  //-----CALCULATOR---------------------
 
   function handleClick(num) {
     if (input === "0") {
@@ -17,6 +47,7 @@ const Calculator = () => {
       setSecondnum(secondNum + num);
     }
   }
+
   function handleOperator(op) {
     setFirstnum(Number(input));
     setOperator(op);
@@ -35,7 +66,7 @@ const Calculator = () => {
     let secondNumber = Number(secondNum);
     let result = 0;
 
-    console.log(secondNumber);
+    // console.log(secondNumber);
 
     if (operator === "+") {
       result = firstNum + secondNumber;
@@ -46,7 +77,7 @@ const Calculator = () => {
     } else if (operator === "/") {
       result = firstNum / secondNumber;
     }
-    console.log(result);
+    // console.log(result);
 
     setOutput(String(result));
     setInput("");
@@ -56,45 +87,44 @@ const Calculator = () => {
 
   return (
     <div className="container">
+      <div className="calculator">
+        <div className="display">
+          <div className="input">{input}</div>
+          <div className="output">{output}</div>
+        </div>
 
-    <div className="calculator">
-      <div className="display">
-        <div className="input">{input}</div>
-        <div className="output">{output}</div>
+        <div className="buttons">
+          <button onClick={handleClear}>C</button>
+          <button>⌫</button>
+          <button>%</button>
+          <button onClick={() => handleOperator("/")}>/</button>
+
+          <button onClick={() => handleClick("7")}>7</button>
+          <button onClick={() => handleClick("8")}>8</button>
+          <button onClick={() => handleClick("9")}>9</button>
+          <button onClick={() => handleOperator("*")}>*</button>
+
+          <button onClick={() => handleClick("4")}>4</button>
+          <button onClick={() => handleClick("5")}>5</button>
+          <button onClick={() => handleClick("6")}>6</button>
+          <button onClick={() => handleOperator("-")}>-</button>
+
+          <button onClick={() => handleClick("1")}>1</button>
+          <button onClick={() => handleClick("2")}>2</button>
+          <button onClick={() => handleClick("3")}>3</button>
+          <button onClick={() => handleOperator("+")}>+</button>
+
+          <button>00</button>
+          <button>0</button>
+          <button>.</button>
+          <button onClick={calculateResult}>=</button>
+        </div>
       </div>
 
-      <div className="buttons">
-        <button onClick={handleClear}>C</button>
-        <button>⌫</button>
-        <button>%</button>
-        <button onClick={() => handleOperator("/")}>/</button>
-
-        <button onClick={() => handleClick("7")}>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button onClick={() => handleOperator("*")}>*</button>
-
-        <button onClick={() => handleClick("4")}>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button onClick={() => handleOperator("-")}>-</button>
-
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button onClick={() => handleOperator("+")}>+</button>
-
-        <button>00</button>
-        <button>0</button>
-        <button>.</button>
-        <button onClick={calculateResult}>=</button>
-      </div>
-    </div>
-
-    <div className="quotebox">
-        <h1>hiiii this is first quote</h1>
-
-        
+      <div className="quotebox">
+        <h1>Code of the day..</h1>
+        <h2>{quote}</h2>
+        <p>{quote.author}</p>
       </div>
     </div>
   );

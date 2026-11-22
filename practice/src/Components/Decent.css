@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f6f5fc;
+  color: #292544;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  width: 100%;
+  min-height: 78px;
+  padding: 15px 8%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 20px rgba(50, 40, 100, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  color: #7955d9;
+  font-size: 28px;
+}
+
+.logo h2,
+.footer h3 {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo h2 span,
+.footer h3 span {
+  color: #7955d9;
+}
+
+.header nav {
+  display: flex;
+  gap: 35px;
+}
+
+.header nav a,
+.footer-links a {
+  text-decoration: none;
+  color: #77718e;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.header nav a:hover,
+.footer-links a:hover {
+  color: #7955d9;
+}
+
+.header-tag {
+  padding: 9px 18px;
+  background: #f0ebff;
+  color: #7955d9;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  padding: 65px 8%;
+}
+
+.calculator-section,
+.quote-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-heading span {
+  color: #7955d9;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading h1 {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #292544;
+}
+
+.section-heading p {
+  font-size: 13px;
+  color: #88839d;
+}
+
+/* ================= CALCULATOR ================= */
+
+.calculator {
+  width: 100%;
+  max-width: 350px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(76, 61, 140, 0.12);
+}
+
+.display {
+  min-height: 115px;
+  background: #f5f2ff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow-wrap: anywhere;
+}
+
+.input {
+  font-size: 23px;
+  font-weight: 500;
+  color: #77718e;
+  min-height: 30px;
+}
+
+.output {
+  font-size: 30px;
+  font-weight: 700;
+  color: #7955d9;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+
+.buttons button {
+  height: 58px;
+  border: none;
+  border-radius: 14px;
+  background: #f2effb;
+  color: #40385e;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 7px rgba(60, 45, 100, 0.04);
+}
+
+.buttons button:hover {
+  background: #e2d9ff;
+  transform: translateY(-3px);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+.buttons button:nth-child(4n) {
+  background: #e8e0ff;
+  color: #704ac8;
+}
+
+.buttons button:nth-child(4n):hover {
+  background: #d8caff;
+}
+
+.buttons button:last-child {
+  background: #7955d9;
+  color: #fff;
+}
+
+.buttons button:last-child:hover {
+  background: #6240bd;
+}
+
+/* ================= QUOTE CARD ================= */
+
+.quotebox {
+  width: 100%;
+  max-width: 420px;
+  min-height: 350px;
+  padding: 35px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #7552d2, #9879e9);
+  color: white;
+  box-shadow: 0 18px 40px rgba(91, 61, 171, 0.20);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow-wrap: anywhere;
+  transition: 0.3s ease;
+}
+
+.quotebox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(91, 61, 171, 0.25);
+}
+
+.quote-symbol {
+  font-family: Georgia, serif;
+  font-size: 65px;
+  height: 65px;
+  color: #e5d9ff;
+}
+
+.quotebox h2 {
+  font-size: 19px;
+  line-height: 1.8;
+  font-weight: 500;
+  margin: 15px 0 20px;
+}
+
+.quotebox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e6dcff;
+  margin-bottom: 28px;
+}
+
+.quotebox button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #704ac8;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.quotebox button:hover {
+  background: #eee8ff;
+  transform: translateY(-3px);
+}
+
+.quotebox small {
+  margin-top: 20px;
+  color: #e8ddff;
+  font-size: 11px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  width: 100%;
+  background: #292544;
+  color: #fff;
+  padding: 28px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer h3 {
+  font-size: 20px;
+}
+
+.footer p {
+  color: #bcb6d0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  color: #d2cce2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 55px;
+    padding: 50px 20px;
+  }
+
+  .calculator-section,
+  .quote-section {
+    width: 100%;
+  }
+
+  .header {
+    padding: 15px 5%;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .header nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 10px;
+  }
+
+  .header-tag {
+    font-size: 10px;
+  }
+
+  .section-heading h1 {
+    font-size: 23px;
+  }
+
+  .calculator {
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .buttons {
+    gap: 9px;
+  }
+
+  .buttons button {
+    height: 54px;
+    font-size: 17px;
+  }
+
+  .quotebox {
+    max-width: 420px;
+    min-height: 320px;
+    padding: 28px 22px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+}
