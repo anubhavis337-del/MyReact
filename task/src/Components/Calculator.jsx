@@ -17,7 +17,7 @@ const Calculator = () => {
     let apiUrl = `https://api.api-ninjas.com/v2/randomquotes`;
     const response = await fetch(apiUrl, {
       // method: "GET",
-      headers: {
+      headers: { 
         "X-Api-Key": apiKey,
       },
     });

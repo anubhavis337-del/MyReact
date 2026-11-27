@@ -30,7 +30,7 @@ const Products = () => {
   return (
     <div className="bg-[#E8F0E6] min-h-screen p-8">
 
-      <h1 className="text-4xl font-bold text-[#294A36] text-center">
+      <h1 className="text-4xl font-bold text-[#B76E85] text-center">
         Discover Our Collection
       </h1>
 
@@ -50,7 +50,7 @@ const Products = () => {
                 className="w-full h-52 object-cover rounded-xl"
               />
 
-              <h2 className="font-semibold text-[#294A36] mt-4">
+              <h2 className="font-semibold text-black mt-4">
                 {item.title}
               </h2>
 
@@ -58,7 +58,7 @@ const Products = () => {
                 ₹{item.price}
               </p>
 
-              <button className="bg-[#496B50] text-white w-full py-2 rounded-full mt-4 hover:bg-[#294A36]">
+              <button className="bg-[#713B50] text-white w-full py-2 rounded-full mt-4 hover:bg-[#F8B8C7]">
                 Add to Cart
               </button>
 
